@@ -35,13 +35,14 @@ start: all
 
 clean:
 	@echo -n "${RED}X	"
-	rm -rf ${NAME}
-	@echo -n "${RED}X	"
-	rm -rf ${OBJS}
+	rm ${OBJS}
 	@echo -n "${NC}"
 	@echo "${GREEN}✓	${NAME} clean${NC}"
 
 fclean: clean
+	@echo -n "${RED}X	"
+	rm ${NAME}
+	@echo -n "${NC}"
 
 re: fclean all
 
