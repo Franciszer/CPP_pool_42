@@ -11,9 +11,9 @@ INCLUDE_DIRS = -I .
 
 
 .cpp.o:
-	@echo -n "${LIGHT_BLUE}=>	"
+	@printf "${LIGHT_BLUE}=>	"
 	${CPP} ${FLAGS} ${INCLUDE_DIRS} -c $< -o ${<:.cpp=.o}
-	@echo -n "${NC}"
+	@printf "${NC}"
 
 # ___COLORS___
 
@@ -26,7 +26,7 @@ NC=\033[0m
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	@echo -n "${YELLOW}=>	"
+	@printf "${YELLOW}=>	"
 	${CPP} ${FLAGS} ${INCLUDE_DIRS} ${OBJS} -o ${NAME}
 	@echo "${GREEN}✓	${NAME} compiled${NC}"
 
@@ -34,15 +34,15 @@ start: all
 	./${NAME}
 
 clean:
-	@echo -n "${RED}X	"
+	printf "${RED}X	"
 	rm ${OBJS}
-	@echo -n "${NC}"
+	@printf "${NC}"
 	@echo "${GREEN}✓	${NAME} clean${NC}"
 
 fclean: clean
-	@echo -n "${RED}X	"
+	@printf "${RED}X	"
 	rm ${NAME}
-	@echo -n "${NC}"
+	@printf "${NC}"
 
 re: fclean all
 

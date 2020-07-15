@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
+/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 09:45:45 by franciszer        #+#    #+#             */
-/*   Updated: 2020/07/10 16:45:41 by franciszer       ###   ########.fr       */
+/*   Updated: 2020/07/15 14:48:31 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 PhoneBook::PhoneBook(void)
 {
 	std::cout << "PhoneBook Creator Called" << std::endl;
+	this->_nbContact = 0;
 }
 
 PhoneBook::~PhoneBook(void)

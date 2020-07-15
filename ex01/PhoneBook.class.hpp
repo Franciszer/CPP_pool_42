@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
+/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 09:58:48 by franciszer        #+#    #+#             */
-/*   Updated: 2020/07/10 16:27:07 by franciszer       ###   ########.fr       */
+/*   Updated: 2020/07/15 14:46:17 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	void	interpretCommand(void);
 private:
 	Contact	_contacts[8];
-	int		_nbContact = 0;
+	int		_nbContact;
 	void	_addContact(void);
 	void	_searchContact(void);
 };
