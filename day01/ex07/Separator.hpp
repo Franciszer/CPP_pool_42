@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.hpp                                          :+:      :+:    :+:   */
+/*   Separator.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/07 16:38:48 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/08 11:20:30 by franciszer       ###   ########.fr       */
+/*   Created: 2020/08/11 19:58:05 by franciszer        #+#    #+#             */
+/*   Updated: 2020/08/11 21:28:47 by franciszer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_HPP
+#ifndef SEPARATOR_HPP
 
-# define HUMAN_HPP
+# define SEPARATOR_HPP
 
 # include <iostream>
 # include <iomanip>
 # include <string>
-# include "Brain.hpp"
+# include <fstream>
+# include <sstream>
+class Separator
+{
+	public:
+		Separator(std::string const &file, std::string const &to_find,\
+				std::string const &to_replace);
+		~Separator(void);
+		
+		void	replace(void);
+	private:
+		std::string	const &file;
+		std::string	const &to_find;
+		std::string	const &to_replace;
 
-class Human {
-
-public:
-	Human(void);
-	~Human(void);
-
-	std::string		identify(void);
-	Brain			getBrain(void);
-
-private:
-	Brain			_brain;	
+		std::string	replace_line(std::string const &line);
 };
 
 #endif

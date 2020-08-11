@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/07 16:38:34 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/08 11:20:24 by franciszer       ###   ########.fr       */
+/*   Created: 2020/08/08 11:36:34 by franciszer        #+#    #+#             */
+/*   Updated: 2020/08/08 12:33:33 by franciszer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#include "HumanA.hpp"
+#include "HumanA.hpp"
+#include "Weapon.hpp"
 
-Human::Human(void)
+int	main(void)
 {
-	// std::cout << "Human Creator Called" << std::endl;
-	this->_brain = Brain();
-}
+	Weapon club = Weapon("crude spiked club");
+	HumanA bob("Bob", club);
+	bob.attack();
+	club.setType("some other type of club");
+	bob.attack();
 
-Human::~Human(void)
-{
-	// std::cout << "Human Destructor Called" << std::endl;
-}
-
-std::string	Human::identify(void) {
-	std::string str = this->_brain.identify();
-	return (str);
-}
-
-Brain		Human::getBrain(void) {
-	return this->_brain;
+	Weapon crossbow = Weapon("crude spiked crossbow");
+	HumanB jim("Jim");
+	jim.setWeapon(crossbow);
+	jim.attack();
+	crossbow.setType("some other type of crossbow");
+	jim.attack();
 }

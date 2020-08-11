@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 16:38:07 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/07 16:56:52 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/08/08 11:16:00 by franciszer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	Brain(void);
 	~Brain(void);
 
-	std::string	identifier(void);
+	std::string	identify(void);
 
 private:
 	

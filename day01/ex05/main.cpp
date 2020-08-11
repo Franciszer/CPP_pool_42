@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 16:39:08 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/07 16:56:57 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/08/08 11:16:14 by franciszer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 
 int	main(void)
 {
-	Brain	newBrain = Brain();
-	Brain	brain2 = Brain();
-	
-	std::cout << newBrain.identifier() << std::endl;
-	std::cout << brain2.identifier() << std::endl;
+	Human	francis = Human();
+
+	std::cout << francis.identify() << std::endl;
+	std::cout << francis.getBrain().identify() << std::endl;
 	return 0;
 }

@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/07 16:38:34 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/08 11:20:24 by franciszer       ###   ########.fr       */
+/*   Created: 2020/08/08 11:26:51 by franciszer        #+#    #+#             */
+/*   Updated: 2020/08/08 11:48:25 by franciszer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#include "Weapon.hpp"
 
-Human::Human(void)
+Weapon::Weapon(std::string type): _type(type)
 {
-	// std::cout << "Human Creator Called" << std::endl;
-	this->_brain = Brain();
+	std::cout << "Weapon Creator Called" << std::endl;
 }
 
-Human::~Human(void)
+Weapon::~Weapon(void)
 {
-	// std::cout << "Human Destructor Called" << std::endl;
+	std::cout << "Weapon Destructor Called" << std::endl;
 }
 
-std::string	Human::identify(void) {
-	std::string str = this->_brain.identify();
-	return (str);
+void		Weapon::setType(std::string type) {
+	this->_type = type;
 }
 
-Brain		Human::getBrain(void) {
-	return this->_brain;
+std::string	&Weapon::getType(void) {
+	std::string	&type = this->_type;
+
+	return type;
 }

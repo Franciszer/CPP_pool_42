@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/07 16:38:34 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/08 11:20:24 by franciszer       ###   ########.fr       */
+/*   Created: 2020/08/08 11:33:34 by franciszer        #+#    #+#             */
+/*   Updated: 2020/08/08 11:49:41 by franciszer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#ifndef WEAPON_HPP
 
-Human::Human(void)
+# define WEAPON_HPP
+
+# include <iostream>
+# include <iomanip>
+# include <string>
+# include "HumanA.hpp"
+# include "HumanB.hpp"
+
+class Weapon
 {
-	// std::cout << "Human Creator Called" << std::endl;
-	this->_brain = Brain();
-}
+	public:
+		Weapon(std::string type = "");
+		~Weapon(void);
+		void		setType(std::string type);
+		std::string	&getType(void);
 
-Human::~Human(void)
-{
-	// std::cout << "Human Destructor Called" << std::endl;
-}
+	private:
+		std::string	_type;		
+};
 
-std::string	Human::identify(void) {
-	std::string str = this->_brain.identify();
-	return (str);
-}
-
-Brain		Human::getBrain(void) {
-	return this->_brain;
-}
+#endif

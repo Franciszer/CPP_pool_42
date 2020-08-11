@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 14:49:05 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/07 15:25:12 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/08/08 11:03:30 by franciszer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include <chrono>
 #include "Zombie.hpp"
 
 class ZombieHorde
