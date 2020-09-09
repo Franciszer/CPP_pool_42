@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
+/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 09:55:30 by franciszer        #+#    #+#             */
-/*   Updated: 2020/07/10 16:46:48 by franciszer       ###   ########.fr       */
+/*   Updated: 2020/09/09 14:02:57 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 Contact::Contact(void)
 {
-	std::cout << "Contact Creator Called" << std::endl;
+
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "Contact Destructor Called" << std::endl;
+
 }
 
 

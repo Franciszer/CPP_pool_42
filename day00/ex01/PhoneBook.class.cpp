@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 09:45:45 by franciszer        #+#    #+#             */
-/*   Updated: 2020/08/07 11:48:51 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/09 14:50:15 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,14 @@ void	PhoneBook::interpretCommand(void) {
 		std::string	command;
 
 		while (1) {
-			std::cout << "Type command [ADD, EXIT, SEARCH]: ";
+			if (!std::cin.eof())
+				std::cout << "Type command [ADD, EXIT, SEARCH]: ";
 			std::getline(std::cin, command);
-			if (command == "EXIT")
+			if (std::cin.eof()) {
+				std::cout << std::endl;
+				exit(0);
+			}
+			else if (command == "EXIT")
 				exit(0);
 			else if (command == "ADD")
 				this->_addContact();
@@ -51,8 +56,8 @@ void	PhoneBook::_searchContact(void) {
 	int	index;
 	std::cout << "Type in contact index: ";
 	std::cin >> index;
-	if (std::cin.fail() || index >= this->_nbContact) {
-		std::cout << "Please type in an integer between 0 and " << this->_nbContact << std::endl;
+	if (std::cin.fail() || index >= this->_nbContact || index < 0) {
+		std::cout << "Please type in an integer between 0 and " << this->_nbContact - 1 << std::endl;
 		std::cin.clear();
 		std::cin.ignore(10000, '\n');
 	}
