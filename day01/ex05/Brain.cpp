@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
+/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 16:37:46 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/08 11:15:46 by franciszer       ###   ########.fr       */
+/*   Updated: 2020/09/13 18:50:53 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 Brain::Brain(void)
 {
-	// std::cout << "Brain Creator Called" << std::endl;
 }
 
 Brain::~Brain(void)
 {
-	// std::cout << "Brain Destructor Called" << std::endl;
 }
 
 std::string	Brain::identify(void) {

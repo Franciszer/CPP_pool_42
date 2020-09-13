@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 14:48:47 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/07 15:26:25 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/13 18:45:18 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,25 @@
 
 ZombieHorde::ZombieHorde(unsigned int n)
 {
-	std::cout << "ZombieHorde Creator Called" << std::endl;
-	
 	if (n > 0) {
-		this->zombieHorde = new Zombie[n];
+		this->_zombieHorde = new Zombie[n];
 		this->_size= n;
 	
 		for (unsigned int i = 0; i < n; i++)
-			zombieHorde[i].name = ZombieHorde::randomName();
+			this->_zombieHorde[i].name = ZombieHorde::_randomName();
 	}
 	else
-		std::cout << "Your horde need atleat 1 zombie" << std::endl;
+		std::cout << "Your horde needs atleast 1 zombie" << std::endl;
 }
 
 ZombieHorde::~ZombieHorde(void)
 {
-	std::cout << "ZombieHorde Destructor Called" << std::endl;
-	delete [] this->zombieHorde;
+	delete [] this->_zombieHorde;
 }
 
 void	ZombieHorde::announce() {
 	for (unsigned int i = 0; i < this->_size; i++)
-		this->zombieHorde[i].advert();
+		this->_zombieHorde[i].advert();
 }
 
 std::string	ZombieHorde::_zombieNames[] = {
@@ -47,7 +44,7 @@ std::string	ZombieHorde::_zombieNames[] = {
 										"Luffy"
 };
 
-std::string	ZombieHorde::randomName(void) {
+std::string	ZombieHorde::_randomName(void) {
 	std::srand(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 	int	maxIndex = sizeof(ZombieHorde::_zombieNames)/sizeof((ZombieHorde::_zombieNames[0]));
 	std::string	name = ZombieHorde::_zombieNames[std::rand() % maxIndex];

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
+/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 16:38:34 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/08 11:20:24 by franciszer       ###   ########.fr       */
+/*   Updated: 2020/09/13 18:50:41 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 Human::Human(void)
 {
-	// std::cout << "Human Creator Called" << std::endl;
 	this->_brain = Brain();
 }
 
 Human::~Human(void)
 {
-	// std::cout << "Human Destructor Called" << std::endl;
 }
 
 std::string	Human::identify(void) {

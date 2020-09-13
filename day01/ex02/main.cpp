@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 12:41:56 by frthierr          #+#    #+#             */
-/*   Updated: 2020/09/09 15:38:25 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/13 18:38:46 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,28 @@ int	main(void)
 {
 	ZombieEvent event;
 
-	event.setZombieType("crawler");
 	
-	std::cout << "____RANDOM_ZOMBIES____" << std::endl;
-	Zombie	*eric = event.randomChump();
-	eric->announce();
-	delete eric;
-	eric = event.randomChump();
-	eric->announce();
-	delete eric;
-	eric = event.randomChump();
-	eric->announce();
-	delete eric;
-	eric = event.randomChump();
-	eric->announce();
-	delete eric;
+	std::cout << "____RANDOM_ZOMBIES____" << std::endl << std::endl;
+	
+	Zombie	*random = event.randomChump();
+	random->announce();
+	delete random;
+	event.setZombieType("swimmer");
+	random = event.randomChump();
+	random->announce();
+	delete random;
+	event.setZombieType("jumper");
+	random = event.randomChump();
+	random->announce();
+	delete random;
+	event.setZombieType("lover");
+	random = event.randomChump();
+	random->announce();
+	delete random;
 	std::cout << std::endl;
 	
-	std::cout << "____DEFINED_ZOMBIES____" << std::endl;
-	Zombie	zidane("Zinedine", "standing");
-	zidane.announce();
-	std::cout << std::endl;
+	std::cout << "____DEFINED_ZOMBIES____" << std::endl << std::endl;
+	Zombie	cristiano("CR7", "asDuBallonRond");
+	cristiano.announce();
 	return (0);
 }
