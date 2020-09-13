@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 12:39:35 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/07 12:49:01 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/09 15:23:30 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	Zombie(std::string name, std::string type);
 	~Zombie(void);
 
-	void		advert(void);
+	void		announce(void);
 
 	std::string name;
 	std::string type;

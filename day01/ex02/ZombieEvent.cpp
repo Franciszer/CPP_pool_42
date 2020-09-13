@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 12:40:34 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/07 14:30:06 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/09 15:25:04 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 ZombieEvent::ZombieEvent(void)
 {
-	std::cout << "ZombieEvent Creator Called" << std::endl;
 }
 
 ZombieEvent::~ZombieEvent(void)
 {
-	std::cout << "ZombieEvent Destructor Called" << std::endl;
 }
 
 

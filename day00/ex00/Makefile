@@ -2,10 +2,9 @@
 
 CPP= c++
 FLAGS= -Wall -Wextra -Werror
-SRCS=	main.cpp\
-		Pony.cpp
+SRCS=	megaphone.cpp
 
-NAME=	pony
+NAME= megaphone
 OBJS= ${SRCS:.cpp=.o}
 INCLUDE_DIRS = -I .
 
@@ -33,17 +32,24 @@ ${NAME}: ${OBJS}
 start: all
 	@./${NAME}
 
+valgrind_start: all
+	@valgrind --leak-check=full --show-leak-kinds=definite ./${NAME}
+
 clean:
 	@printf "${RED}X "
-	rm ${OBJS}
+	rm -rf ${OBJS}
 	@printf "${NC}"
 	@echo "${GREEN}✓ ${NAME} clean${NC}"
 
 fclean: clean
 	@printf "${RED}X "
-	rm ${NAME}
+	rm -rf ${NAME}
+	@printf "${NC}"
+	@printf "${RED}X "
+	rm -rf *.dSYM
 	@printf "${NC}"
 
 re: fclean all
 
 .PHONY: all clean fclean re start
+

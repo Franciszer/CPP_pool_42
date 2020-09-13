@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 09:45:45 by franciszer        #+#    #+#             */
-/*   Updated: 2020/09/09 14:50:15 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/13 15:56:11 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	PhoneBook::_searchContact(void) {
 	}
 	else {
 		this->_contacts[index].printFullContact();
+		std::cin.ignore(INT_MAX, '\n');
 	}
 	return ;
 }
