@@ -6,26 +6,24 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 16:38:34 by frthierr          #+#    #+#             */
-/*   Updated: 2020/09/13 18:50:41 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/14 13:35:30 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Human.hpp"
 
-Human::Human(void)
+Human::Human(void): _brain(Brain())
 {
-	this->_brain = Brain();
 }
 
 Human::~Human(void)
 {
 }
 
-std::string	Human::identify(void) {
-	std::string str = this->_brain.identify();
-	return (str);
+std::string		Human::identify(void) const{
+	return (this->_brain.identify());
 }
 
-Brain		Human::getBrain(void) {
+Brain			Human::getBrain(void) const{
 	return this->_brain;
 }

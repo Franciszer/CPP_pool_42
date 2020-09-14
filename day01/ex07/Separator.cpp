@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Separator.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
+/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 19:58:11 by franciszer        #+#    #+#             */
-/*   Updated: 2020/08/11 21:51:39 by franciszer       ###   ########.fr       */
+/*   Updated: 2020/09/14 13:54:42 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,16 @@
 Separator::Separator(std::string const &file, std::string const &to_find, std::string const &to_replace):
 file(file), to_find(to_find), to_replace(to_replace)
 {
-	std::cout << "Separator Creator Called" << std::endl;
 	if (!file.length())
 		throw "file is empty";
 	if (!to_find.length())
 		throw "to_find is empty";
-	if (!to_replace.length())
-		throw "to_replace is empty";
+	// if (!to_replace.length())
+	// 	throw "to_replace is empty";
 }
 
 Separator::~Separator(void)
 {
-	std::cout << "Separator Destructor Called" << std::endl;
 }
 
 void	Separator::replace(void) {

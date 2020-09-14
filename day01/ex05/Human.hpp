@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
+/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 16:38:48 by frthierr          #+#    #+#             */
-/*   Updated: 2020/08/08 11:20:30 by franciszer       ###   ########.fr       */
+/*   Updated: 2020/09/14 13:35:11 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ public:
 	Human(void);
 	~Human(void);
 
-	std::string		identify(void);
-	Brain			getBrain(void);
+	std::string			identify(void) const;
+	Brain				getBrain(void) const;
 
 private:
-	Brain			_brain;	
+	Brain const			_brain;	
 };
 
 #endif

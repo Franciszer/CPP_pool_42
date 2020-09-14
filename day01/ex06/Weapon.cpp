@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
+/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 11:26:51 by franciszer        #+#    #+#             */
-/*   Updated: 2020/08/08 11:48:25 by franciszer       ###   ########.fr       */
+/*   Updated: 2020/09/14 13:43:49 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 Weapon::Weapon(std::string type): _type(type)
 {
-	std::cout << "Weapon Creator Called" << std::endl;
 }
 
 Weapon::~Weapon(void)
 {
-	std::cout << "Weapon Destructor Called" << std::endl;
 }
 
 void		Weapon::setType(std::string type) {

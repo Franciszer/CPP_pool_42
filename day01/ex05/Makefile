@@ -39,13 +39,13 @@ valgrind_start: all
 
 clean:
 	@printf "${RED}X "
-	rm ${OBJS}
+	rm -rf ${OBJS}
 	@printf "${NC}"
 	@echo "${GREEN}✓ ${NAME} clean${NC}"
 
 fclean: clean
 	@printf "${RED}X "
-	rm ${NAME}
+	rm -rf ${NAME}
 	@printf "${NC}"
 
 re: fclean all
