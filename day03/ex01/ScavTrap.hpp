@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:18:52 by user42            #+#    #+#             */
-/*   Updated: 2020/09/21 17:13:36 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/21 17:27:48 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
 
-# define FRAGTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include <iostream>
 # include <iomanip>
 # include <string>
 # include <chrono>
 
-class FragTrap {
+class ScavTrap {
     public:
-        FragTrap(std::string name);
-        FragTrap(FragTrap const &src);
-        ~FragTrap(void);
+        ScavTrap(std::string name);
+        ScavTrap(ScavTrap const &src);
+        ~ScavTrap(void);
 
-        FragTrap   &operator=(FragTrap const &src);
+        ScavTrap   &operator=(ScavTrap const &src);
 
         std::string getName(void);
         int         getHp(void);
@@ -35,9 +35,9 @@ class FragTrap {
         void        meleeAttack(std::string const &target);
         void        takeDamage(unsigned int amount);
         void        beRepaired(unsigned int amount);
-        void        vaulthunter_dot_exe(std::string const & target);
+        void        challengeNewcomer(std::string const & target);
     private:
-        static std::string attacks[];
+        static std::string challenges[];
         std::string name;
         int         hit_points;
         int         max_hit_points;

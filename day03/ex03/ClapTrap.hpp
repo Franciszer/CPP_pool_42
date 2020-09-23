@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:18:52 by user42            #+#    #+#             */
-/*   Updated: 2020/09/21 17:13:36 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/21 18:50:25 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
+#ifndef CLAPTRAP_HPP
 
-# define FRAGTRAP_HPP
+# define CLAPTRAP_HPP
 
 # include <iostream>
 # include <iomanip>
 # include <string>
 # include <chrono>
 
-class FragTrap {
+class ClapTrap {
     public:
-        FragTrap(std::string name);
-        FragTrap(FragTrap const &src);
-        ~FragTrap(void);
-
-        FragTrap   &operator=(FragTrap const &src);
+        ClapTrap(std::string name = "default");
+        ClapTrap(ClapTrap const &src);
+        ~ClapTrap(void);
+        ClapTrap   &operator=(ClapTrap const &src);
 
         std::string getName(void);
         int         getHp(void);
         void        setHp(int amount);
 
-        void        rangedAttack(std::string const &target);
-        void        meleeAttack(std::string const &target);
         void        takeDamage(unsigned int amount);
         void        beRepaired(unsigned int amount);
-        void        vaulthunter_dot_exe(std::string const & target);
-    private:
-        static std::string attacks[];
+    protected:
         std::string name;
         int         hit_points;
         int         max_hit_points;

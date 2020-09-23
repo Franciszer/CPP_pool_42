@@ -6,21 +6,24 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:13:06 by user42            #+#    #+#             */
-/*   Updated: 2020/09/23 16:35:08 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/21 17:30:49 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(std::string name):
-ClapTrap(name)
+name(name),
+hit_points(100),
+max_hit_points(100),
+energy_points(50),
+max_energy_points(50),
+level(1),
+melee_attack_damage(20),
+ranged_attack_damage(15),
+armor_damage_reduction(3)
 {
     std::cout << "ScavTrap suddenly appeared" << std::endl;    
-	this->energy_points = 50;
-	this->max_energy_points = 50;
-	this->melee_attack_damage = 20;
-	this->ranged_attack_damage = 15;
-	this->armor_damage_reduction = 3;
     return ;
 }
 
@@ -52,6 +55,22 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &src) {
 
 }
 
+std::string ScavTrap::getName(void) {
+    return this->name;
+}
+int         ScavTrap::getHp(void) {
+    return this->hit_points;
+}
+
+void        ScavTrap::setHp(int amount) {
+    if (amount > this->max_hit_points)
+        this->hit_points = this->max_hit_points;
+    else if (amount < 0)
+        this->hit_points = 0;
+    else
+        this->hit_points = amount;
+    return ;
+}
 
 void        ScavTrap::rangedAttack(std::string const &target) {
     std::cout << this->name << " does his ScapTrap thing " << target <<\
@@ -79,7 +98,7 @@ void        ScavTrap::beRepaired(unsigned int amount) {
 
 std::string ScavTrap::challenges[] = {
     "chess",
-    "touching one's nose with one's tongue",
+    "touching one's nose one's tongue",
     "bending a spoon",
     "dance battle",
     "kiss a frog"
@@ -90,6 +109,6 @@ void        ScavTrap::challengeNewcomer(std::string const & target) {
     int	maxIndex = sizeof(ScavTrap::challenges)/sizeof((ScavTrap::challenges[0]));
     std::string	challengeName = ScavTrap::challenges[std::rand() % maxIndex];
     std::cout << this->name << " challenged " << target <<\
-    " in the " << challengeName << " challenge" << std::endl;
+    " in the " << challengeName << "challenge" << std::endl;
     return ;
 }

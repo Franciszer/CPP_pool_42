@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:13:06 by user42            #+#    #+#             */
-/*   Updated: 2020/09/23 16:35:08 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/23 16:35:11 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,33 +24,33 @@ ClapTrap(name)
     return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src) {
-    std::cout << "Assignation of a ScavTrap" << std::endl;
-    if (this != &src)
-        *this = src;
-    return ;
-}
+// ScavTrap::ScavTrap(ScavTrap const &src) {
+//     std::cout << "Assignation of a ScavTrap" << std::endl;
+//     if (this != &src)
+//         *this = src;
+//     return ;
+// }
 
 ScavTrap::~ScavTrap(void) {
     std::cout << "ScavTrap was destroyed" << std::endl;
     return ;
 }
 
-ScavTrap	&ScavTrap::operator=(ScavTrap const &src) {
-    if (this != &src) {
-        this->name = src.name;
-        this->armor_damage_reduction = src.armor_damage_reduction;
-        this->hit_points = src.hit_points;
-        this->max_hit_points = src.max_energy_points;
-        this->energy_points = src.energy_points;
-        this->max_energy_points = src.max_energy_points;
-        this->level = src.level;
-        this->melee_attack_damage = src.melee_attack_damage;
-        this->ranged_attack_damage = src.melee_attack_damage;
-    }
-    return *this;
+// ScavTrap	&ScavTrap::operator=(ScavTrap const &src) {
+//     if (this != &src) {
+//         this->name = src.name;
+//         this->armor_damage_reduction = src.armor_damage_reduction;
+//         this->hit_points = src.hit_points;
+//         this->max_hit_points = src.max_energy_points;
+//         this->energy_points = src.energy_points;
+//         this->max_energy_points = src.max_energy_points;
+//         this->level = src.level;
+//         this->melee_attack_damage = src.melee_attack_damage;
+//         this->ranged_attack_damage = src.melee_attack_damage;
+//     }
+//     return *this;
 
-}
+// }
 
 
 void        ScavTrap::rangedAttack(std::string const &target) {
@@ -73,7 +73,7 @@ void        ScavTrap::takeDamage(unsigned int amount) {
 }
 void        ScavTrap::beRepaired(unsigned int amount) {
     std::cout << this->name << " was healed by " << amount\
-    << "hit points" << std::endl;
+    << " hit points" << std::endl;
     this->setHp(this->hit_points + amount);
 }
 
