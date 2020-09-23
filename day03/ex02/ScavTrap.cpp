@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:13:06 by user42            #+#    #+#             */
-/*   Updated: 2020/09/21 18:52:25 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/23 12:34:30 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 ScavTrap::ScavTrap(std::string name):
 ClapTrap(name)
 {
-	energy_points = 50;
-	max_energy_points = 50;
-	melee_attack_damage = 20;
-	ranged_attack_damage = 15;
-	armor_damage_reduction = 3;
     std::cout << "ScavTrap suddenly appeared" << std::endl;    
+	this->energy_points = 50;
+	this->max_energy_points = 50;
+	this->melee_attack_damage = 20;
+	this->ranged_attack_damage = 15;
+	this->armor_damage_reduction = 3;
+	std::cout << this->level << std::endl;
     return ;
 }
 

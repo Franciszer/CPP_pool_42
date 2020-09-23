@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:13:06 by user42            #+#    #+#             */
-/*   Updated: 2020/09/21 18:28:13 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/23 12:28:24 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@ ClapTrap::ClapTrap(std::string name):
 name(name),
 hit_points(100),
 max_hit_points(100),
-level(1)
+energy_points(100),
+max_energy_points(100),
+level(1),
+melee_attack_damage(30),
+ranged_attack_damage(20),
+armor_damage_reduction(5)
 {
     std::cout << "Default constructor called" << std::endl;    
     return ;

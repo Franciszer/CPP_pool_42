@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:18:52 by user42            #+#    #+#             */
-/*   Updated: 2020/09/21 18:49:08 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/23 12:33:57 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <chrono>
 # include "ClapTrap.hpp"
 
-class ScavTrap: virtual public ClapTrap {
+class ScavTrap: public ClapTrap {
     public:
         ScavTrap(std::string name);
         ScavTrap(ScavTrap const &src);
@@ -35,7 +35,6 @@ class ScavTrap: virtual public ClapTrap {
         void        challengeNewcomer(std::string const & target);
     private:
         static std::string challenges[];
-        std::string name;
 };
 
 #endif

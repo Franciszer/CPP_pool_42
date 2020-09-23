@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 20:06:58 by user42            #+#    #+#             */
-/*   Updated: 2020/09/21 18:51:18 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/23 12:34:38 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int main()
     Jim.meleeAttack("rodrigueLaVicos");
     Jimmy.rangedAttack("guliverLaPoukie");
     
-    // while (JimmyJunior.getHp())
-    //     JimmyJunior.takeDamage(25);
-    // while (JimmyJunior.getHp() != 100)
-    //     JimmyJunior.beRepaired(25);
+    while (JimmyJunior.getHp())
+        JimmyJunior.takeDamage(25);
+    while (JimmyJunior.getHp() != 100)
+        JimmyJunior.beRepaired(25);
 
-    // for (int j = 0 ; j < 5 ; j++)
-    //     Jim.vaulthunter_dot_exe("vivianneLaGitane");
+    for (int j = 0 ; j < 5 ; j++)
+        Jim.vaulthunter_dot_exe("vivianneLaGitane");
     
 	ScavTrap	littleTrap("littleTrap");
 
