@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:18:52 by user42            #+#    #+#             */
-/*   Updated: 2020/09/23 18:03:46 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/24 13:46:27 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <chrono>
 # include "ClapTrap.hpp"
 
-class FragTrap: public ClapTrap {
+class FragTrap: virtual public ClapTrap {
     public:
         FragTrap(std::string name = "default");
         ~FragTrap(void);
