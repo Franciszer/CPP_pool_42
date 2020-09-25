@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:13:06 by user42            #+#    #+#             */
-/*   Updated: 2020/09/23 12:28:24 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/25 12:55:48 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ melee_attack_damage(30),
 ranged_attack_damage(20),
 armor_damage_reduction(5)
 {
-    std::cout << "Default constructor called" << std::endl;    
+    std::cout << "Claptrap Default constructor called" << std::endl;    
     return ;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &src) {
-    std::cout << "Assignation constructor called" << std::endl;
+    std::cout << "Claptrap Assignation constructor called" << std::endl;
     if (this != &src)
         *this = src;
     return ;
 }
 
 ClapTrap::~ClapTrap(void) {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap Destructor called" << std::endl;
     return ;
 }
 
@@ -44,12 +44,12 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &src) {
         this->name = src.name;
         this->armor_damage_reduction = src.armor_damage_reduction;
         this->hit_points = src.hit_points;
-        this->max_hit_points = src.max_energy_points;
+        this->max_hit_points = src.max_hit_points;
         this->energy_points = src.energy_points;
         this->max_energy_points = src.max_energy_points;
         this->level = src.level;
         this->melee_attack_damage = src.melee_attack_damage;
-        this->ranged_attack_damage = src.melee_attack_damage;
+        this->ranged_attack_damage = src.ranged_attack_damage;
     }
     return *this;
 
@@ -73,9 +73,10 @@ void        ClapTrap::setHp(int amount) {
 }
 
 void        ClapTrap::takeDamage(unsigned int amount) {
-    std::cout << this->name << " took " << amount <<\
+	int reduced_value = amount - this->armor_damage_reduction;
+    std::cout << this->name << " took " << reduced_value <<\
     " points of damage" << std::endl;
-    this->setHp(this->hit_points - amount);
+    this->setHp(this->hit_points - reduced_value);
     return ;
 }
 void        ClapTrap::beRepaired(unsigned int amount) {

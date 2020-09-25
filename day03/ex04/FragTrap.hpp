@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:18:52 by user42            #+#    #+#             */
-/*   Updated: 2020/09/24 13:46:27 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/25 12:54:46 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ class FragTrap: virtual public ClapTrap {
 
         void        rangedAttack(std::string const &target);
         void        meleeAttack(std::string const &target);
-        void        takeDamage(unsigned int amount);
-        void        beRepaired(unsigned int amount);
         void        vaulthunter_dot_exe(std::string const & target);
     private:
         static std::string attacks[];

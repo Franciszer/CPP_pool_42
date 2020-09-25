@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 13:34:45 by frthierr          #+#    #+#             */
-/*   Updated: 2020/09/24 15:40:25 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/25 12:57:43 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void		NinjaTrap::ninjaShoebox(FragTrap &fragTrap) {
 }
 
 void		NinjaTrap::ninjaShoebox(ScavTrap &scavTrap) {
-	std::cout << this->getName() << "used ninjaShoebox on ";
+	std::cout << this->getName() << " used ninjaShoebox on ";
 	std::cout << "a ScavTrap called " << scavTrap.getName() << std::endl;
 	std::cout << "He used challengeNewcomer" << std::endl;
 	scavTrap.challengeNewcomer("random victim");

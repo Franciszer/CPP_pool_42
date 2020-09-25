@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:13:06 by user42            #+#    #+#             */
-/*   Updated: 2020/09/21 17:30:49 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/25 12:53:56 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &src) {
         this->name = src.name;
         this->armor_damage_reduction = src.armor_damage_reduction;
         this->hit_points = src.hit_points;
-        this->max_hit_points = src.max_energy_points;
+        this->max_hit_points = src.max_hit_points;
         this->energy_points = src.energy_points;
         this->max_energy_points = src.max_energy_points;
         this->level = src.level;
         this->melee_attack_damage = src.melee_attack_damage;
-        this->ranged_attack_damage = src.melee_attack_damage;
+        this->ranged_attack_damage = src.ranged_attack_damage;
     }
     return *this;
 
@@ -85,9 +85,10 @@ void        ScavTrap::meleeAttack(std::string const &target) {
 }
 
 void        ScavTrap::takeDamage(unsigned int amount) {
-    std::cout << this->name << " suffered " << amount <<\
+	int	reduced_value = amount - this->armor_damage_reduction;
+    std::cout << this->name << " suffered " << reduced_value <<\
     " points of damage" << std::endl;
-    this->setHp(this->hit_points - amount);
+    this->setHp(this->hit_points - reduced_value);
     return ;
 }
 void        ScavTrap::beRepaired(unsigned int amount) {
@@ -98,7 +99,7 @@ void        ScavTrap::beRepaired(unsigned int amount) {
 
 std::string ScavTrap::challenges[] = {
     "chess",
-    "touching one's nose one's tongue",
+    "touching one's with nose one's tongue",
     "bending a spoon",
     "dance battle",
     "kiss a frog"
@@ -109,6 +110,6 @@ void        ScavTrap::challengeNewcomer(std::string const & target) {
     int	maxIndex = sizeof(ScavTrap::challenges)/sizeof((ScavTrap::challenges[0]));
     std::string	challengeName = ScavTrap::challenges[std::rand() % maxIndex];
     std::cout << this->name << " challenged " << target <<\
-    " in the " << challengeName << "challenge" << std::endl;
+    " in the " << challengeName << " challenge" << std::endl;
     return ;
 }

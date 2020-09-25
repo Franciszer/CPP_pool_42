@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:13:06 by user42            #+#    #+#             */
-/*   Updated: 2020/09/23 12:35:59 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/25 12:54:54 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,56 +24,21 @@ FragTrap::FragTrap(std::string name): ClapTrap(name)
     return ;
 }
 
-FragTrap::FragTrap(FragTrap const &src) {
-    std::cout << "FragTrap assignation constructor called" << std::endl;
-    if (this != &src)
-        *this = src;
-    return ;
-}
-
 FragTrap::~FragTrap(void) {
     std::cout << "FragTrap destructor called" << std::endl;
     return ;
 }
 
-FragTrap	&FragTrap::operator=(FragTrap const &src) {
-    if (this != &src) {
-        this->name = src.name;
-        this->armor_damage_reduction = src.armor_damage_reduction;
-        this->hit_points = src.hit_points;
-        this->max_hit_points = src.max_energy_points;
-        this->energy_points = src.energy_points;
-        this->max_energy_points = src.max_energy_points;
-        this->level = src.level;
-        this->melee_attack_damage = src.melee_attack_damage;
-        this->ranged_attack_damage = src.melee_attack_damage;
-    }
-    return *this;
-
-}
-
 void        FragTrap::rangedAttack(std::string const &target) {
     std::cout << this->name << " attacks " << target <<\
-    "at range for " << this->ranged_attack_damage << " damage" << std::endl;
+    " at range for " << this->ranged_attack_damage << " damage" << std::endl;
     return ;    
 }
 
 void        FragTrap::meleeAttack(std::string const &target) {
-    std::cout << this->name << " attackds " << target <<\
-    "in melee for " << this->melee_attack_damage << " damage" << std::endl;
+    std::cout << this->name << " attacks " << target <<\
+    " in melee for " << this->melee_attack_damage << " damage" << std::endl;
     return ;
-}
-
-void        FragTrap::takeDamage(unsigned int amount) {
-    std::cout << this->name << " took " << amount <<\
-    " points of damage" << std::endl;
-    this->setHp(this->hit_points - amount);
-    return ;
-}
-void        FragTrap::beRepaired(unsigned int amount) {
-    std::cout << this->name << " was repaired by " << amount\
-    << "hit points" << std::endl;
-    this->setHp(this->hit_points + amount);
 }
 
 std::string FragTrap::attacks[] = {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:13:06 by user42            #+#    #+#             */
-/*   Updated: 2020/09/20 21:15:08 by user42           ###   ########.fr       */
+/*   Updated: 2020/09/25 12:26:01 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ melee_attack_damage(30),
 ranged_attack_damage(20),
 armor_damage_reduction(5)
 {
-    std::cout << "Default constructor called" << std::endl;    
+    std::cout << "Fragtrap Default constructor called" << std::endl;    
     return ;
 }
 
 FragTrap::FragTrap(FragTrap const &src) {
-    std::cout << "Assignation constructor called" << std::endl;
+    std::cout << "Fragtrap assignation constructor called" << std::endl;
     if (this != &src)
         *this = src;
     return ;
 }
 
 FragTrap::~FragTrap(void) {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Fragtrap Destructor called" << std::endl;
     return ;
 }
 
@@ -49,7 +49,7 @@ FragTrap	&FragTrap::operator=(FragTrap const &src) {
         this->max_energy_points = src.max_energy_points;
         this->level = src.level;
         this->melee_attack_damage = src.melee_attack_damage;
-        this->ranged_attack_damage = src.melee_attack_damage;
+        this->ranged_attack_damage = src.ranged_attack_damage;
     }
     return *this;
 
@@ -74,13 +74,13 @@ void        FragTrap::setHp(int amount) {
 
 void        FragTrap::rangedAttack(std::string const &target) {
     std::cout << this->name << " attacks " << target <<\
-    "at range for " << this->ranged_attack_damage << " damage" << std::endl;
+    " at range for " << this->ranged_attack_damage << " damage" << std::endl;
     return ;    
 }
 
 void        FragTrap::meleeAttack(std::string const &target) {
     std::cout << this->name << " attacks " << target <<\
-    "in melee for " << this->melee_attack_damage << " damage" << std::endl;
+    " in melee for " << this->melee_attack_damage << " damage" << std::endl;
     return ;
 }
 

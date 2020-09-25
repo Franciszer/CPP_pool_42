@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 20:06:58 by user42            #+#    #+#             */
-/*   Updated: 2020/09/21 17:30:23 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/25 12:31:34 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ int main()
     for (int j = 0 ; j < 5 ; j++)
         Jim.vaulthunter_dot_exe("vivianneLaGitane");
     
-	ScavTrap	littleTrap("littleTrap");
+	ScavTrap	ogscav("littleTrap");
+	ScavTrap	copyScav = ogscav;
+	ScavTrap	littleTrap(ogscav);
 
 	while (littleTrap.getHp())
 		littleTrap.takeDamage(12);

@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 13:30:42 by frthierr          #+#    #+#             */
-/*   Updated: 2020/09/23 18:01:52 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/24 15:38:13 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,18 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class NinjaTrap: public ClapTrap {
+class NinjaTrap: virtual public ClapTrap {
 	public:
-		NinjaTrap(std::string name);
+		NinjaTrap(std::string name = "default");
 		~NinjaTrap(void);
 
-	private:
+		void	rangedAttack(std::string const &target);
+        void	meleeAttack(std::string const &target);
 		void	ninjaShoebox(ClapTrap &clapTrap);
 		void	ninjaShoebox(FragTrap &fragTrap);
 		void	ninjaShoebox(ScavTrap &scavTrap);
 		void	ninjaShoebox(NinjaTrap &ninjaTrap);
+	private:
 		
 };
 

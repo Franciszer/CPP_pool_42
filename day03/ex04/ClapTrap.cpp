@@ -6,29 +6,29 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:13:06 by user42            #+#    #+#             */
-/*   Updated: 2020/09/23 18:42:56 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/25 12:55:48 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name):
+name(name),
+hit_points(100),
+max_hit_points(100),
+energy_points(100),
+max_energy_points(100),
+level(1),
+melee_attack_damage(30),
+ranged_attack_damage(20),
+armor_damage_reduction(5)
 {
     std::cout << "Claptrap Default constructor called" << std::endl;    
-	this->name = name;
-	this->hit_points = 100;
-	this->max_hit_points = 100;
-	this->energy_points = 100;
-	this->max_energy_points = 100;
-	this->level = 1;
-	this->melee_attack_damage = 30;
-	this->ranged_attack_damage = 20;
-	this->armor_damage_reduction = 5;
     return ;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &src) {
-    std::cout << "Assignation constructor called" << std::endl;
+    std::cout << "Claptrap Assignation constructor called" << std::endl;
     if (this != &src)
         *this = src;
     return ;
@@ -44,12 +44,12 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &src) {
         this->name = src.name;
         this->armor_damage_reduction = src.armor_damage_reduction;
         this->hit_points = src.hit_points;
-        this->max_hit_points = src.max_energy_points;
+        this->max_hit_points = src.max_hit_points;
         this->energy_points = src.energy_points;
         this->max_energy_points = src.max_energy_points;
         this->level = src.level;
         this->melee_attack_damage = src.melee_attack_damage;
-        this->ranged_attack_damage = src.melee_attack_damage;
+        this->ranged_attack_damage = src.ranged_attack_damage;
     }
     return *this;
 
@@ -73,9 +73,10 @@ void        ClapTrap::setHp(int amount) {
 }
 
 void        ClapTrap::takeDamage(unsigned int amount) {
-    std::cout << this->name << " took " << amount <<\
+	int reduced_value = amount - this->armor_damage_reduction;
+    std::cout << this->name << " took " << reduced_value <<\
     " points of damage" << std::endl;
-    this->setHp(this->hit_points - amount);
+    this->setHp(this->hit_points - reduced_value);
     return ;
 }
 void        ClapTrap::beRepaired(unsigned int amount) {

@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 20:06:58 by user42            #+#    #+#             */
-/*   Updated: 2020/09/23 16:31:20 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/25 12:59:37 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main()
 
 	while (littleTrap.getHp())
 		littleTrap.takeDamage(12);
-	while (littleTrap.getHp() != 50)
+	while (littleTrap.getHp() != 100)
 		littleTrap.beRepaired(12);
 	for (int j = 0; j < 5; j++)
 		littleTrap.challengeNewcomer("Robert");	
