@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 20:06:58 by user42            #+#    #+#             */
-/*   Updated: 2020/09/25 12:46:59 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/26 11:43:55 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ int main()
     while (JimmyJunior.getHp() != 100)
         JimmyJunior.beRepaired(25);
 
-    for (int j = 0 ; j < 5 ; j++)
+    for (int j = 0 ; j < 5 ; j++) {
         Jim.vaulthunter_dot_exe("vivianneLaGitane");
+    }
     
 	ScavTrap	littleTrap("littleTrap");
 

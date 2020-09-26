@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:13:06 by user42            #+#    #+#             */
-/*   Updated: 2020/09/25 12:26:01 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/26 11:38:23 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ melee_attack_damage(30),
 ranged_attack_damage(20),
 armor_damage_reduction(5)
 {
-    std::cout << "Fragtrap Default constructor called" << std::endl;    
+    std::cout << "Default constructor called" << std::endl;    
     return ;
 }
 
 FragTrap::FragTrap(FragTrap const &src) {
-    std::cout << "Fragtrap assignation constructor called" << std::endl;
+    std::cout << "Assignation constructor called" << std::endl;
     if (this != &src)
         *this = src;
     return ;
 }
 
 FragTrap::~FragTrap(void) {
-    std::cout << "Fragtrap Destructor called" << std::endl;
+    std::cout << "Destructor called" << std::endl;
     return ;
 }
 
@@ -85,9 +85,10 @@ void        FragTrap::meleeAttack(std::string const &target) {
 }
 
 void        FragTrap::takeDamage(unsigned int amount) {
-    std::cout << this->name << " took " << amount <<\
+	int	reduced_value = amount - this->armor_damage_reduction;
+    std::cout << this->name << " took " << reduced_value <<\
     " points of damage" << std::endl;
-    this->setHp(this->hit_points - amount);
+    this->setHp(this->hit_points - reduced_value);
     return ;
 }
 void        FragTrap::beRepaired(unsigned int amount) {
@@ -105,10 +106,16 @@ std::string FragTrap::attacks[] = {
 };
 
 void        FragTrap::vaulthunter_dot_exe(std::string const & target) {
-    std::srand(std::chrono::high_resolution_clock::now().time_since_epoch().count());
-    int	maxIndex = sizeof(FragTrap::attacks)/sizeof((FragTrap::attacks[0]));
-    std::string	attackName = FragTrap::attacks[std::rand() % maxIndex];
-    std::cout << this->name << " used " << attackName <<\
-    " on " << target << std::endl;
+    if ((this->energy_points -= 25) < 0) {
+        this->energy_points = 0;
+        std::cout << this->name << " is out of energy" << std::endl;
+    }
+    else {
+        std::srand(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+        int	maxIndex = sizeof(FragTrap::attacks)/sizeof((FragTrap::attacks[0]));
+        std::string	attackName = FragTrap::attacks[std::rand() % maxIndex];
+        std::cout << this->name << " used " << attackName <<\
+        " on " << target << std::endl;
+    }
     return ;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 19:13:06 by user42            #+#    #+#             */
-/*   Updated: 2020/09/25 12:53:22 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/09/26 11:38:23 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,10 +106,16 @@ std::string FragTrap::attacks[] = {
 };
 
 void        FragTrap::vaulthunter_dot_exe(std::string const & target) {
-    std::srand(std::chrono::high_resolution_clock::now().time_since_epoch().count());
-    int	maxIndex = sizeof(FragTrap::attacks)/sizeof((FragTrap::attacks[0]));
-    std::string	attackName = FragTrap::attacks[std::rand() % maxIndex];
-    std::cout << this->name << " used " << attackName <<\
-    " on " << target << std::endl;
+    if ((this->energy_points -= 25) < 0) {
+        this->energy_points = 0;
+        std::cout << this->name << " is out of energy" << std::endl;
+    }
+    else {
+        std::srand(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+        int	maxIndex = sizeof(FragTrap::attacks)/sizeof((FragTrap::attacks[0]));
+        std::string	attackName = FragTrap::attacks[std::rand() % maxIndex];
+        std::cout << this->name << " used " << attackName <<\
+        " on " << target << std::endl;
+    }
     return ;
 }
