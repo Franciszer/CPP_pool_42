@@ -25,6 +25,11 @@ class Fixed {
 		Fixed				operator-(Fixed const rha);
 		Fixed				operator*(Fixed const rha);
 		Fixed				operator/(Fixed const rha);
+		bool				operator!=(Fixed const rha);
+		bool				operator>(Fixed const rha);
+		bool				operator>=(Fixed const rha);
+		bool				operator<(Fixed const rha);
+		bool				operator<=(Fixed const rha);
 	
 	private:
 		int		_value;

@@ -54,7 +54,54 @@ int          Fixed::toInt(void) const {
     return (this->_value >> this->fractional_bits);
 }
 
+Fixed				Fixed::operator+(Fixed const rha) {
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits() + rha.getRawBits());
+	return (result);
+}
+
+Fixed				Fixed::operator-(Fixed const rha) {
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits() - rha.getRawBits());
+	return (result);
+}
+Fixed				Fixed::operator*(Fixed const rha) {
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits() * rha.getRawBits());
+	return (result);
+}
+Fixed				Fixed::operator/(Fixed const rha) {
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits() / rha.getRawBits());
+	return (result);
+}
+
 std::ostream		&operator<<(std::ostream &os, const Fixed &fixedPoint) {
     os << fixedPoint.toFloat();
     return os;
+}
+
+bool				Fixed::operator!=(Fixed const rha) {
+	return (this->getRawBits() != rha.getRawBits());
+}
+
+bool				Fixed::operator>(Fixed const rha) {
+	return (this->getRawBits() > rha.getRawBits());
+
+}
+
+bool				Fixed::operator>=(Fixed const rha) {
+	return (this->getRawBits() >= rha.getRawBits());
+}
+
+bool				Fixed::operator<(Fixed const rha) {
+	return (this->getRawBits() < rha.getRawBits());
+}
+
+bool				Fixed::operator<=(Fixed const rha) {
+	return (this->getRawBits() <= rha.getRawBits());
 }
