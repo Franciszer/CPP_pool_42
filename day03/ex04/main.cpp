@@ -30,9 +30,10 @@ int main()
     while (JimmyJunior.getHp() != 100)
         JimmyJunior.beRepaired(25);
 
-    for (int j = 0 ; j < 5 ; j++)
+    for (int j = 0 ; j < 5 ; j++) {
         Jim.vaulthunter_dot_exe("vivianneLaGitane");
-    
+	}
+	
 	ScavTrap	ogScav("littleTrap");
 	ScavTrap	copyScav(ogScav);
 	ScavTrap	littleTrap = copyScav;
