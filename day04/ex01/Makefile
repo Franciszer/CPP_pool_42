@@ -1,7 +1,7 @@
 # ___COMPILATION___
 
 CPP= c++
-FLAGS= -Wall -Wextra -Werror
+FLAGS=# -Wall -Wextra -Werror
 SRCS=	main.cpp\
 		AWeapon.cpp\
 		PlasmaRifle.cpp\
