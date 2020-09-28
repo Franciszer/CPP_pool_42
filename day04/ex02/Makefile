@@ -1,17 +1,13 @@
 # ___COMPILATION___
 
 CPP= c++
-FLAGS= -Wall -Wextra -Werror
+FLAGS=# -Wall -Wextra -Werror
 SRCS=	main.cpp\
-		AWeapon.cpp\
-		PlasmaRifle.cpp\
-		PowerFist.cpp\
-		Enemy.cpp\
-		SuperMutant.cpp\
-		RadScorpion.cpp\
-		Character.cpp
+		Squad.cpp\
+		TacticalMarine.cpp\
+		AssaultTerminator.cpp
 
-NAME= weapons
+NAME= spaceArmy
 OBJS= ${SRCS:.cpp=.o}
 INCLUDE_DIRS = -I .
 
