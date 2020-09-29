@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 17:01:05 by user42            #+#    #+#             */
-/*   Updated: 2020/09/28 18:24:44 by user42           ###   ########.fr       */
+/*   Updated: 2020/09/29 11:35:38 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ TacticalMarine::TacticalMarine(void) {
     return ;
 }
 
-TacticalMarine::TacticalMarine(TacticalMarine const &src) {
-    if (this != &src)
-        *this = src;
+TacticalMarine::TacticalMarine(TacticalMarine const &src):
+TacticalMarine()
+{
+    (void)src;
     return ;
 }
 

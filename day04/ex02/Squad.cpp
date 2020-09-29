@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 16:43:49 by user42            #+#    #+#             */
-/*   Updated: 2020/09/28 18:44:36 by user42           ###   ########.fr       */
+/*   Updated: 2020/09/29 11:38:03 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ _members(NULL),
 _count(0)
 {
     int max = src.getCount();
-    
     for (int i = 0 ; i < max ; i++)
         this->push(src.getUnit(i)->clone());
     return ;
@@ -48,7 +47,7 @@ Squad	&Squad::operator=(Squad const &src) {
     }
     int max = src._count;
     for (int i = 0 ; i < max ; i++)
-        this->push(src.getUnit(i));
+        this->push(src.getUnit(i)->clone());
     return *this;
 }
 

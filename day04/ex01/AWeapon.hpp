@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 16:30:12 by frthierr          #+#    #+#             */
-/*   Updated: 2020/09/28 13:27:24 by user42           ###   ########.fr       */
+/*   Updated: 2020/09/29 11:15:13 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@
 class AWeapon
 {
 	protected:
-		AWeapon();
         std::string	_name;
 		int			_apCost;
 		int			_damage;
 	public:
 		AWeapon(AWeapon const &src);
+		AWeapon();
 		AWeapon(std::string const & name, int apcost, int damage);
 		virtual 		~AWeapon();
 		AWeapon 		&operator=(AWeapon const &src);

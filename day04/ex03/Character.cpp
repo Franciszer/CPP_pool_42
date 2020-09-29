@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 21:18:03 by user42            #+#    #+#             */
-/*   Updated: 2020/09/28 22:37:21 by user42           ###   ########.fr       */
+/*   Updated: 2020/09/29 12:20:43 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,30 @@ Character::Character(void) {
     return ;
 }
 
-Character::Character(Character const &src) {
+Character::Character(Character const &src):
+Character(src._name)
+{
     if (this != &src) {
-        this->_name = src._name;
-        for (int i = 0; i < 4 ; i++) {
-            this->_inventory[i] = src._inventory[i]->clone();
+            for (int i = 0; i < 4 ; i++) {
+            if (src._inventory[i])
+                this->_inventory[i] = src._inventory[i]->clone();
         }
     }
     return ;
 }
 
 Character::~Character(void) {
+    for (int i = 0; i < 4; i++)
+        delete this->_inventory[i];
     return ;
 }
 
 Character	&Character::operator=(Character const &src) {
     if (this != &src) {
+        for (int i = 0 ; i < 4 ; i++) {
+            delete this->_inventory[i];
+            this->_inventory[i] = NULL;
+        }
         this->_name = src._name;
         for (int i = 0; i < 4 ; i++) {
             this->_inventory[i] = src._inventory[i]->clone();
@@ -54,11 +62,12 @@ std::string const   &Character::getName(void) const {
 }
 
 void                Character::equip(AMateria *m) {
-    for (int i ; i < 4 ; i++)
+    for (int i = 0; i < 4 ; i++) {
         if (!this->_inventory[i]) {
-            this->_inventory[i] = m;
+            this->_inventory[i] = m->clone();
             break ;
         }
+    }
     return ;    
 }
 

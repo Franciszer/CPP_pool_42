@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 16:27:56 by user42            #+#    #+#             */
-/*   Updated: 2020/09/28 16:30:30 by user42           ###   ########.fr       */
+/*   Updated: 2020/09/28 20:08:36 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 
 class ISquad
 {
-public:
-    virtual ~ISquad() {}
-    virtual int getCount() const = 0;
-    virtual ISpaceMarine* getUnit(int) const = 0;
-    virtual int push(ISpaceMarine*) = 0;
+    public:
+        virtual ~ISquad() {}
+        virtual int getCount() const = 0;
+        virtual ISpaceMarine* getUnit(int) const = 0;
+        virtual int push(ISpaceMarine*) = 0;
 };
 
 #endif

@@ -6,15 +6,11 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 13:44:49 by user42            #+#    #+#             */
-/*   Updated: 2020/09/28 13:56:20 by user42           ###   ########.fr       */
+/*   Updated: 2020/09/29 11:14:48 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Enemy.hpp"
-
-Enemy::Enemy(void) {
-    return ;
-}
 
 Enemy::Enemy(int hp, std::string const & type):
 _hp(hp),

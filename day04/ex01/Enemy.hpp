@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 16:36:49 by frthierr          #+#    #+#             */
-/*   Updated: 2020/09/28 13:57:36 by user42           ###   ########.fr       */
+/*   Updated: 2020/09/29 11:14:29 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@
 class Enemy
 {
 	protected:
-		Enemy();
-		
 		int			_hp;
 		std::string	_type;
 	public:
 		Enemy(int hp, std::string const & type);
+		Enemy();
 		Enemy(Enemy const &src);
 		virtual ~Enemy();
 

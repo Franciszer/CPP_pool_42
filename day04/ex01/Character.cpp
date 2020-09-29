@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 14:35:00 by user42            #+#    #+#             */
-/*   Updated: 2020/09/28 15:10:12 by user42           ###   ########.fr       */
+/*   Updated: 2020/09/29 11:07:25 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Character	&Character::operator=(Character const &src) {
 }
 
 void        Character::recoverAP() {
-    if ((this->_ap += 10))
+    if ((this->_ap += 10) > 40)
         this->_ap = 40;
     return ;
 }

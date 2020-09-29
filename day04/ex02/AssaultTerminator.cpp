@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 17:01:05 by user42            #+#    #+#             */
-/*   Updated: 2020/09/28 18:43:26 by user42           ###   ########.fr       */
+/*   Updated: 2020/09/29 11:34:48 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ AssaultTerminator::AssaultTerminator(void) {
     return ;
 }
 
-AssaultTerminator::AssaultTerminator(AssaultTerminator const &src) {
-    if (this != &src)
-        *this = src;
+AssaultTerminator::AssaultTerminator(AssaultTerminator const &src):
+AssaultTerminator()
+{
+    (void)src;
     return ;
 }
 

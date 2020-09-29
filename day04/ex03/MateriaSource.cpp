@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 22:13:17 by user42            #+#    #+#             */
-/*   Updated: 2020/09/28 22:42:27 by user42           ###   ########.fr       */
+/*   Updated: 2020/09/29 12:03:38 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ MateriaSource::MateriaSource(MateriaSource const &src)
 }
 
 MateriaSource::~MateriaSource(void) {
+    for (int i = 0 ; i < 4 ; i++) {
+        if (this->_known_materias[i])
+            delete this->_known_materias[i];
+    }
     return ;
 }
 
@@ -51,7 +55,7 @@ MateriaSource	&MateriaSource::operator=(MateriaSource const &src) {
 void            MateriaSource::learnMateria(AMateria *m) {
     for (int i = 0; i < 4 ; i++) {
         if (this->_known_materias[i] == NULL) {
-            this->_known_materias[i] = m;
+            this->_known_materias[i] = m->clone();
             break ;
         }
     }
