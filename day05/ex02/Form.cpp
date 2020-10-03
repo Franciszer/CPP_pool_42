@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 15:46:56 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/03 18:28:27 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/03 18:28:34 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,10 @@ const char	*Form::GradeTooHighException::what() const throw() {
 	return "Exception:: grade too high";
 }
 
+const char	*Form::UnsignedFormException::what() const throw() {
+	return "Exception:: form is not signed";
+}
+
 std::ostream	&operator<<(std::ostream &os, Form const &form) {
 	std::string	tail = form.getIsSigned() ? "was already signed" : "has yet to be signed";
 	os << "The form " + form.getName() + " requires grade " << form.getGradeToSign()\
@@ -82,4 +86,12 @@ void			Form::beSigned(Bureaucrat const &bureaucrat) {
 	if (bureaucrat.getGrade() > this->_gradeToSign)
 		throw GradeTooLowException();
 	this->_isSigned= true;
+}
+
+void			Form::execute(Bureaucrat const &executor) const {
+	if (executor.getGrade() > this->_gradeToExecute)
+		throw Form::GradeTooLowException();
+	else if (!this->_isSigned)
+		throw Form::UnsignedFormException();
+	return ;		
 }

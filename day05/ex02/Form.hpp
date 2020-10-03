@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 15:44:01 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/03 18:28:19 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/03 18:28:12 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include <fstream>
 # include "Bureaucrat.hpp"
 
 class	Bureaucrat;
@@ -40,6 +41,10 @@ class Form {
 		class	GradeTooHighException: public std::exception {
 			virtual const char	*what() const throw();
 		};
+		class	UnsignedFormException: public std::exception {
+			virtual const char	*what() const throw();
+		};
+		virtual void	execute(Bureaucrat const &exectuor) const = 0;
 	private:
 		std::string const	_name;
 		int const			_gradeToSign;
