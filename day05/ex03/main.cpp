@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 15:22:14 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/04 14:11:34 by user42           ###   ########.fr       */
+/*   Updated: 2020/10/04 15:49:58 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int	main(void)
 {
@@ -47,5 +48,19 @@ int	main(void)
 	std::cout << shrub;
 	std::cout << robotForm;
 	std::cout << presidentialForm;
-	return 0;
+
+	Intern	noName;
+	Form	*forms[3];
+	
+	forms[0] = noName.makeForm("presidential pardon", "ursuleLaCrapule");
+	forms[1] = noName.makeForm("robotomy request", "yvinLePasMalin");
+	forms[2] = noName.makeForm("shrubbery creation", "lucyInTheSky");
+
+	noName.makeForm("form that does not exist", "unknownFellow");
+	for (int i = 0; i < 3 ; i++) {
+		forms[i]->beSigned(god);
+		forms[i]->execute(god);
+	}
+	for (int i = 0 ; i < 3 ; i++)
+		delete forms[i];
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 15:46:56 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/03 18:28:27 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/04 13:51:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ _gradeToSign(gradeToSign),
 _gradeToExecute(gradeToExecute),
 _isSigned(false)
 {
-	if (this->_gradeToSign < 1)
+	if (this->_gradeToSign < 1 || this->_gradeToExecute < 1)
 		throw GradeTooHighException();
-	else if (this->_gradeToSign > 150)
+	else if (this->_gradeToSign > 150 || this->_gradeToExecute > 150)
 		throw GradeTooLowException();
 	return ;
 }
@@ -31,10 +31,11 @@ _gradeToSign(src._gradeToSign),
 _gradeToExecute(src.getGradeToExecute()),
 _isSigned(false)
 {
-	if (this->_gradeToSign < 1)
+	if (this->_gradeToSign < 1 || this->_gradeToExecute < 1)
 		throw GradeTooHighException();
-	else if (this->_gradeToSign > 150)
-		throw GradeTooLowException();	return ;
+	else if (this->_gradeToSign > 150 || this->_gradeToExecute > 150)
+		throw GradeTooLowException();
+	return ;
 }
 
 Form::~Form(void) {
