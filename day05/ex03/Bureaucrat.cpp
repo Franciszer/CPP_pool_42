@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 14:55:16 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/03 16:23:05 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/05 13:53:11 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,3 +92,8 @@ void			Bureaucrat::signForm(Form &form) const {
 			<< e.what() << std::endl;
 	}	
 }
+
+void		Bureaucrat::executeForm(Form const &form) {
+	form.execute(*this);
+}
+

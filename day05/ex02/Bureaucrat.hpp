@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 14:55:59 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/03 16:21:00 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/05 13:52:27 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Bureaucrat {
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(Bureaucrat const &src);
 		virtual ~Bureaucrat(void);
+		void	executeForm(Form const &form);
 
 		Bureaucrat   	&operator=(Bureaucrat const &src);
 		int				getGrade() const;

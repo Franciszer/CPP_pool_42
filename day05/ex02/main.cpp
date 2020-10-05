@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 15:22:14 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/04 14:11:34 by user42           ###   ########.fr       */
+/*   Updated: 2020/10/05 13:54:56 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	main(void)
 
 	presidentialForm.beSigned(god);
 	presidentialForm.execute(god);
+	god.executeForm(presidentialForm);
 
 	std::cout << shrub;
 	std::cout << robotForm;

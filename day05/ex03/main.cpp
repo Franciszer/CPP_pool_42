@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 15:22:14 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/04 15:49:58 by user42           ###   ########.fr       */
+/*   Updated: 2020/10/05 13:55:21 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(void)
 
 	robotForm.beSigned(corruptFellow);
 	for (int i = 0 ; i < 5; i++)
-		robotForm.execute(corruptFellow);
+		corruptFellow.executeForm(robotForm);
 
 
 	PresidentialPardonForm	presidentialForm("didierLeMeurtrier");
