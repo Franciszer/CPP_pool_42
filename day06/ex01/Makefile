@@ -3,9 +3,9 @@
 CPP= c++
 FLAGS= -Wall -Wextra -Werror
 SRCS=	main.cpp\
-		Converter.cpp
+		Data.cpp
 
-NAME= convert
+NAME= serialize
 OBJS= ${SRCS:.cpp=.o}
 INCLUDE_DIRS = -I .
 

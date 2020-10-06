@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/05 18:05:04 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/06 17:44:36 by frthierr         ###   ########.fr       */
+/*   Created: 2020/10/06 17:57:14 by frthierr          #+#    #+#             */
+/*   Updated: 2020/10/06 17:59:17 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Converter.hpp"
 
-int main(int argc, char const *argv[])
-{
-	std::cout << std::fixed << std::setprecision(1);
-	for (int i = 1 ; i < argc ; i++) {
-		Converter	converter(argv[i]);
-		converter.convert();
-	}
-	return 0;
-}
+#ifndef DATA_HPP
+
+# define DATA_HPP
+
+# include <iostream>
+# include <iomanip>
+# include <string>
+# include <chrono>
+
+typedef struct Data { std::string s1; int n; std::string s2; } Data;
+
+void 	*serialize(void);
+Data 	*deserialize(void * raw);
+
+#endif
