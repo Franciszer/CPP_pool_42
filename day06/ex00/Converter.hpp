@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Converter.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 18:24:55 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/06 17:23:39 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/06 22:05:26 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ class Converter {
 		char		_charValue;
 		bool		_checkDouble;
 		bool		_checkChar;
+		bool		_isNan;
 };
 
 #endif
