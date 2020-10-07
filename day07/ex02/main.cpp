@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 17:55:17 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/07 18:48:40 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/07 21:48:44 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	main(void)
 {
-	typedef Array<std::string>  stringArray;
-    typedef Array<int>          intArray;
-    stringArray a(2);
-    intArray    b(3);
-    intArray    c;
+    Array<std::string> a(2);
+    Array<int>          b(3);
+    Array<int>          c;
 
     try
     {
@@ -67,11 +65,17 @@ int	main(void)
     std::cout << "b[1]: " << b[1] << std::endl;
 
 
-    intArray    d(c);
+    Array<int>          d(c);
     d[1] = 2;
     std::cout << "d[1]: " << d[1] << std::endl;
     std::cout << "c[1]: " << c[1] << std::endl;
 
     std::cout << b.size() << std::endl;
+
+    std::cout << std::endl << "TESTS COPY" << std::endl;
+
+    Array<std::string> assignationCopy(a);
+    Array<std::string>  operatorCopy = a;
+    
 	return 0;
 }
