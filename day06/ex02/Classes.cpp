@@ -17,11 +17,11 @@ Base::~Base(void) {
 }
 
 void identify_from_pointer(Base * p) {
-	if (A *a = dynamic_cast<A*>(p))
+	if (dynamic_cast<A*>(p))
 		std::cout << "A" << std::endl;
-	else if (B *b = dynamic_cast<B*>(p))
+	else if (dynamic_cast<B*>(p))
 		std::cout << "B" << std::endl;
-	else if (C *c = dynamic_cast<C*>(p))
+	else if (dynamic_cast<C*>(p))
 		std::cout << "C" << std::endl;
 }
 
