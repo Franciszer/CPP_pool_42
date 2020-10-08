@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 15:11:36 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/08 16:31:46 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/08 18:46:13 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ int main()
 	Span	assignCopy(sp2);
 	Span	opCopy = sp;
 
-	 std::cout << "assignCopy: " << assignCopy.longestSpan() << std::endl;
-        std::cout << "opCopy: " << opCopy.longestSpan() << std::endl;
+	 std::cout << "assignCopy longestSpan: " << assignCopy.longestSpan() << std::endl;
+        std::cout << "opCopy longestSpan: " << opCopy.longestSpan() << std::endl;
 }

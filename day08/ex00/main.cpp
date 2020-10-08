@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 12:40:11 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/08 13:02:32 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/08 18:37:33 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(void)
 		std::cout << *it << std::endl;
 	else
 		std::cerr << "Error: element is not present in the container" << std::endl;
-	if ((it = easyfind(V, 45)) != V.end())
+	if ((it = easyfind(V, 24)) != V.end())
 		std::cout << *it << std::endl;
 	else
 		std::cerr << "Error: element is not present in the container" << std::endl;

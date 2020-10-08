@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 13:08:36 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/08 16:11:33 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/08 18:43:00 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <algorithm>
 # include <vector>
 
-typedef std::vector<unsigned int> vector;
+typedef std::vector<int> vector;
 
 class Span {
 	public:

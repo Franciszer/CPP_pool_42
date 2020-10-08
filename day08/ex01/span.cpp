@@ -6,7 +6,7 @@
 /*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 13:08:39 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/08 16:26:38 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/08 18:40:27 by frthierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ unsigned int	Span::shortestSpan() const {
 		unsigned int	middle = this->_current / 2 - 1;
 		unsigned int	fst = tmp[middle] - tmp[middle - 1];
 		unsigned int	snd = tmp[middle + 1] - tmp[middle];
-		// std::cout << "fst: " << fst << "|| snd: " << snd << std::endl;
 		return (fst < snd ? fst : snd);
 	}
 	else
