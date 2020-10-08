@@ -20,10 +20,8 @@ void memoryLeak()
 	delete panthere;
 }
 
-// UNCOMMENT AND TEST WITH VALGRIND
-
-// int	main(void)
-// {
-// 	memoryLeak();
-// 	return 0;
-// }
+int	main(void)
+{
+	memoryLeak();
+	return 0;
+}

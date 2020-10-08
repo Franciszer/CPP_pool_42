@@ -15,8 +15,9 @@
 
 # include "Contact.class.hpp"
 # include <iostream>
-#include <iomanip>
+# include <iomanip>
 # include <string>
+# include <limits.h>
 
 class PhoneBook
 {
