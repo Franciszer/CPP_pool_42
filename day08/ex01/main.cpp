@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 15:11:36 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/08 18:46:13 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/09 10:21:38 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
     {
         std::cerr << e.what() << std::endl;
     }
-    sp.addNumber(3);
+    sp.addNumber(1);
     sp.addNumber(17);
     sp.addNumber(1);
     sp.addNumber(11);

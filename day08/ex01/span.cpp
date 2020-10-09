@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 13:08:39 by frthierr          #+#    #+#             */
-/*   Updated: 2020/10/08 18:40:27 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/10/09 10:20:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,13 @@ unsigned int	Span::shortestSpan() const {
 
 	if (this->_current > 1) {
 		sort(tmp.begin(), tmp.end());
-		unsigned int	middle = this->_current / 2 - 1;
-		unsigned int	fst = tmp[middle] - tmp[middle - 1];
-		unsigned int	snd = tmp[middle + 1] - tmp[middle];
-		return (fst < snd ? fst : snd);
+		int	mspan = tmp[1] - tmp[0];
+		int cspan;
+		for (unsigned int i = 2 ; i < this->_current; i++) {
+			if ((cspan = std::abs(tmp[i] - tmp[i - 1])) < mspan)
+				mspan = cspan;
+		}
+		return (mspan);
 	}
 	else
 		throw Span::noSpanToFindException();
